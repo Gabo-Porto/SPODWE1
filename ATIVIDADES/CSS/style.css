@@ -1,0 +1,119 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff; 
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+
+form {
+    background-color: #ffffff; 
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto; 
+}
+
+
+h1 {
+    text-align: center;
+    color: #4caf50; 
+    margin: 20px auto; 
+}
+
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+/
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea,
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+
+input::placeholder {
+    color: #aaa;
+    font-style: italic;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+button {
+    background-color: #4caf50; 
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #45a049; 
+}
+
+
+fieldset {
+    border: 2px solid #4caf50; 
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+legend {
+    color: #4caf50;
+    font-weight: bold;
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+thead th {
+    background-color: #4caf50; 
+    color: #ffffff; 
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+tbody td {
+    background-color: #f9f9f9; 
+}
+
+thead th,
+tbody td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #333;
+}
