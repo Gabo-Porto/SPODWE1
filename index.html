@@ -72,15 +72,18 @@
             white-space: nowrap; /* Impede quebra de linha */
         }
         
-        @media screen and (max-width: 760px) {
-            
-            footer {
-            font-size: 11px;
-            white-space: nowrap; /* Impede quebra de linha */
-            width: 30%;
-            text-align: center;
-          }
-        }
+        footer div {
+    display: inline-block;
+    white-space: nowrap; /* Impede quebra de linha */
+}
+
+@media screen and (max-width: 760px) {
+    footer {
+        font-size: 11px;
+        width: auto; /* Deixa o footer ajustar seu tamanho com base no conteúdo */
+        padding: 5px 0; /* Ajuste no padding para mais espaço */
+    }
+}
     </style>
 </head>
 
