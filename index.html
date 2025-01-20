@@ -33,11 +33,11 @@
             left: 50%;
             transform: translate(-50%, -50%);
             text-align: center;
-            background-color: rgba(0, 0, 0, 0.8); /* Fundo semitransparente */
+            background-color: rgba(0, 0, 0, 0.8);
             padding: 20px;
             border-radius: 10px;
-            max-width: 400px; /* Limita a largura */
-        
+            max-width: 400px;
+
         }
 
         h1 {
@@ -55,8 +55,9 @@
         }
 
         a:hover {
-            color: #10bdc3; /* Cor alterada para roxo ao passar o mouse */
-            transform: scale(1.1); /* Aumenta o tamanho ao passar o mouse */
+            color: #10bdc3;
+            transform: scale(1.1);
+            /* Aumenta o tamanho ao passar o mouse */
         }
 
         footer {
@@ -69,21 +70,24 @@
             text-align: center;
             font-size: 12px;
             border-radius: 10px;
-            white-space: nowrap; /* Impede quebra de linha */
+            white-space: nowrap;
+            /* Impede quebra de linha */
+        }
+
+        footer div {
+            display: inline-block;
+            white-space: nowrap;
+            /* Impede quebra de linha */
+        }
+
+        @media screen and (max-width: 760px) {
+            footer {
+                font-size: 11px;
+                width: auto;/* Deixa o footer ajustar seu tamanho com base no conteúdo */
+                padding: 5px 0;/* Ajuste no padding para mais espaço */
+            }
         }
         
-        footer div {
-    display: inline-block;
-    white-space: nowrap; /* Impede quebra de linha */
-}
-
-@media screen and (max-width: 760px) {
-    footer {
-        font-size: 11px;
-        width: auto; /* Deixa o footer ajustar seu tamanho com base no conteúdo */
-        padding: 5px 0; /* Ajuste no padding para mais espaço */
-    }
-}
     </style>
 </head>
 
@@ -153,11 +157,11 @@
         setInterval(drawMatrix, 100); // Intervalo aumentado para 100ms
     </script>
 </body>
-    <footer>
-        <div>
-            <p>Gabriel Porto &copy; 2025</p>
-        </div>
-       
-    </footer>
+<footer>
+    <div>
+        <p>Gabriel Porto &copy; 2025</p>
+    </div>
+
+</footer>
 
 </html>
