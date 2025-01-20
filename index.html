@@ -1,18 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SPODWE1</title>
+    <title>SPODWE1 - Matrix Effect</title>
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            background: black;
+            color: #0f0;
+            font-family: monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        canvas {
+            position: absolute;
+            display: block;
+        }
+
+        .content {
+            z-index: 1;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.8); /* Fundo semitransparente */
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 400px; /* Limita a largura */
+        
+        }
+
+        h1 {
+            color: #0f0;
+            margin-bottom: 20px;
+        }
+
+        a {
+            color: #0f0;
+            text-decoration: none;
+            font-size: 18px;
+            display: block;
+            margin: 10px 0;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #10bdc3; /* Cor alterada para roxo ao passar o mouse */
+            transform: scale(1.1); /* Aumenta o tamanho ao passar o mouse */
+        }
+
+        footer {
+            color: #0f0;
+            position: fixed;
+            bottom: 0;
+            width: 10%;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 10px 0;
+            text-align: center;
+            font-size: 14px;
+            border-radius: 10px;
+        }
+    </style>
 </head>
+
 <body>
-    <h1>SPODWE1</h1>
-    <a href="https://github.com/Gabo-Porto/SPODWE1">Atividade 1</a>
-    <a href="./ATIVIDADES/A2/Wireframe_Gabriel.png">Atividade 2</a>
-    <a href="./ATIVIDADES/A3/index.html">Atividade 3</a>
-    <a href="./ATIVIDADES/A4/index.html">Atividade 4</a>
-    <a href="./ATIVIDADES/A6/index.html">Atividade 6</a>
-    <a href="./ATIVIDADES/CSS/index.html">CSS</a>
+    <canvas id="matrixCanvas"></canvas>
+    <div class="content">
+        <h1>SPODWE1</h1>
+        <a href="https://github.com/Gabo-Porto/SPODWE1">Atividade 1</a>
+        <a href="./ATIVIDADES/A2/Wireframe_Gabriel.png">Atividade 2</a>
+        <a href="./ATIVIDADES/A3/index.html">Atividade 3</a>
+        <a href="./ATIVIDADES/A4/index.html">Atividade 4</a>
+        <a href="">Atividade 5@</a>
+        <a href="./ATIVIDADES/A6/index.html">Atividade 6</a>
+        <a href="">Atividade 7@</a>
+        <a href="">Atividade 8@</a>
+        <a href="./ATIVIDADES/CSS/index.html">CSS</a>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('matrixCanvas');
+        const ctx = canvas.getContext('2d');
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const columns = Math.floor(canvas.width / 20);
+        const drops = [];
+
+        for (let x = 0; x < columns; x++) {
+            drops[x] = 1;
+        }
+
+        function drawMatrix() {
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            ctx.fillStyle = '#0f0';
+            ctx.font = '20px monospace';
+
+            for (let i = 0; i < drops.length; i++) {
+                const randomChar = Math.random();
+                let char;
+
+                if (randomChar < 0.3) {
+                    // Gerando letras (A-Z, a-z)
+                    char = String.fromCharCode(65 + Math.floor(Math.random() * 26)); // Maiúsculas
+                } else if (randomChar < 0.6) {
+                    // Gerando números (0-9)
+                    char = String.fromCharCode(48 + Math.floor(Math.random() * 10));
+                } else if (randomChar < 0.8) {
+                    // Gerando caracteres Katakana (U+30A0 até U+30FF)
+                    char = String.fromCharCode(0x30A0 + Math.floor(Math.random() * 96));
+                } else {
+                    // Gerando outros caracteres Unicode (U+2500 até U+25FF)
+                    char = String.fromCharCode(0x2500 + Math.floor(Math.random() * 96));
+                }
+
+                ctx.fillText(char, i * 20, drops[i] * 20);
+
+                if (drops[i] * 20 > canvas.height && Math.random() > 0.975) {
+                    drops[i] = 0;
+                }
+                drops[i]++;
+            }
+        }
+
+        setInterval(drawMatrix, 100); // Intervalo aumentado para 100ms
+    </script>
 </body>
+    <footer>
+        <div>
+            <p>Gabriel Porto &copy; 2025</p>
+        </div>
+       
+    </footer>
+
 </html>
