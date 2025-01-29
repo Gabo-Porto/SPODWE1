@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Border Radius</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <h1>Custom Border Radius</h1>
+    <p>Use os controles deslizantes para ajustar o raio das bordas do seu objeto!</p>
+  </header>
+  <main>
+    <section class="preview-container">
+      <div id="shape-preview" class="shape-preview"></div>
+    </section>
+    <section class="slider-controls">
+      <div class="slider-item">
+        <label for="top-left">Raio Superior Esquerdo:</label>
+        <input type="range" id="top-left" min="0" max="100" value="30">
+      </div>
+      <div class="slider-item">
+        <label for="top-right">Raio Superior Direito:</label>
+        <input type="range" id="top-right" min="0" max="100" value="30">
+      </div>
+      <div class="slider-item">
+        <label for="bottom-right">Raio Inferior Direito:</label>
+        <input type="range" id="bottom-right" min="0" max="100" value="30">
+      </div>
+      <div class="slider-item">
+        <label for="bottom-left">Raio Inferior Esquerdo:</label>
+        <input type="range" id="bottom-left" min="0" max="100" value="30">
+      </div>
+    </section>
+    <section class="css-output">
+      <p id="css-value">border-radius: 30% 30% 30% 30%;</p>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+
+</html>
